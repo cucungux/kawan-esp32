@@ -5,7 +5,6 @@
         {
             "name": "witekno-kawan-ai-k2",
             "sdkconfig_append": [
-                "CONFIG_ESPTOOLPY_FLASHSIZE_16MB=y",
                 "CONFIG_SPIRAM_MODE_OCT=y"
             ]
         }
