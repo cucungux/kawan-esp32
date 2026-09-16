@@ -1,5 +1,5 @@
 #include "wifi_board.h"
-#include "audio_codecs/no_audio_codec.h"
+#include "codecs/no_audio_codec.h"
 #include "display/lcd_display.h"
 #include "application.h"
 #include "button.h"
@@ -48,7 +48,7 @@ private:
 
         esp_lcd_panel_dev_config_t panel_config = {};
         panel_config.reset_gpio_num = DISPLAY_RST_PIN;
-        panel_config.rgb_endian = LCD_RGB_ENDIAN_BGR;
+        panel_config.rgb_ele_order = LCD_RGB_ELEMENT_ORDER_BGR;
         panel_config.bits_per_pixel = 16;
         ESP_ERROR_CHECK(esp_lcd_new_panel_st7789(panel_io, &panel_config, &panel));
 

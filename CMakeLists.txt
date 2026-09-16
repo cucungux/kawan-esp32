@@ -7,7 +7,9 @@ add_compile_options(-Wno-missing-field-initializers)
 
 include($ENV{IDF_PATH}/tools/cmake/project.cmake)
 # "Trim" the build. Include the minimal set of components, main, and anything it depends on.
-idf_build_set_property(MINIMAL_BUILD ON)
+set(CMAKE_C_USE_RESPONSE_FILE_FOR_INCLUDES 1)
+set(CMAKE_CXX_USE_RESPONSE_FILE_FOR_INCLUDES 1)
+set(CMAKE_NINJA_FORCE_RESPONSE_FILE 1)
 
 set(PROJECT_VER "2.5.0")
 project(xiaozhi)
